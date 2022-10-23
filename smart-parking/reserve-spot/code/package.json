@@ -1,0 +1,17 @@
+{
+  "name": "function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kafkajs": "^1.15.0",
+    "raw-body": "2.4.1",
+    "redis": "^3.0.2"
+  }
+}

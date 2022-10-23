@@ -15,7 +15,7 @@ Both functions access [OSS storage](https://www.alibabacloud.com/product/object-
 To deploy the function,
 
 ```
-cd faas-scheduling-benchmark/video-processing
+cd faas-scheduling-benchmark/media-processing
 fun deploy -y convert-audio
 ```
 
@@ -25,7 +25,7 @@ To invoke the function,
 # Replace all bracketed placeholders "<xxx>" with your choice.
 # - The <fc-endpoint> can be found in the result printed out by `fun deploy`.
 # - The "object_url" is where you have uploaded the video file. 
-curl -s -i http://<fc-endpoint>/2016-08-15/proxy/video-processing/convert-audio/ \
+curl -s -i http://<fc-endpoint>/2016-08-15/proxy/media-processing/convert-audio/ \
         -X POST \
         -d "{ \"object_url\": \"https://<bucket-name>.oss-<region>.aliyuncs.com/<path-to-media-file>\", 
               \"output_bucket\": \"<bucket-name>\", 
@@ -42,13 +42,13 @@ The function converts an audio file into the WAV format and writes it to `<bucke
 To deploy the function, 
 
 ```
-cd faas-scheduling-benchmark/video-processing
+cd faas-scheduling-benchmark/media-processing
 fun deploy -y get-media-meta 
 ```
 
 To invoke the function,
 
 ```
-curl -s -i http://<fc-endpoint>/2016-08-15/proxy/video-processing/get-media-meta/ \
+curl -s -i http://<fc-endpoint>/2016-08-15/proxy/media-processing/get-media-meta/ \
         -X POST \
         -d "{ \"object_url\": \"https://<bucket-name>.oss-<region>.aliyuncs.com/<path-to-media-file>\" }"

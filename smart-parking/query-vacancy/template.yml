@@ -1,0 +1,27 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  smart-parking:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'Query the vacancy count stored in Redis.'
+      Policies:
+        - AliyunContainerRegistryReadOnlyAccess
+        - AliyunLogFullAccess
+      InternetAccess: true
+
+    query-vacancy:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: nodejs10
+        CodeUri: './code'
+        MemorySize: 256
+        EnvironmentVariables:
+          REDIS_URL: 'redis://<username>:<password>@<redis-url>:6379'
+      Events:
+        http-trigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: ['POST', 'GET']

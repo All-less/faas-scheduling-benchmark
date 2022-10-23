@@ -1,0 +1,29 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  smart-parking:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'Reserve a parking spot'
+      Policies:
+        - AliyunContainerRegistryReadOnlyAccess
+        - AliyunLogFullAccess
+      InternetAccess: true
+
+    reserve-spot:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: nodejs10
+        CodeUri: './code'
+        MemorySize: 256
+        EnvironmentVariables:
+          REDIS_URL: 'redis://<username>:<password>@<redis-url>:6379'
+          KAFKA_BROKER: '<broker-address>'
+          KAFKA_TOPIC: '<kafka-topic>'
+      Events:
+        http-trigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: ['POST', 'GET']

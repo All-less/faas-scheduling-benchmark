@@ -27,7 +27,7 @@ The benchmark suite has five applications, each with two functions. You could fo
 </thead>
 <tbody>
   <tr>
-    <td rowspan="2">Smart Parking</td>
+    <td rowspan="2"><a href="smart-parking">Smart Parking</a></td>
     <td>Query Vacancy</td>
     <td>JavaScript</td>
     <td>Redis</td>
@@ -38,7 +38,7 @@ The benchmark suite has five applications, each with two functions. You could fo
     <td>Redis, Kafka</td>
   </tr>
   <tr>
-    <td rowspan="2">Log Processing</td>
+    <td rowspan="2"><a href="log-processing">Log Processing</a></td>
     <td>Anonymize Log</td>
     <td>Rust</td>
     <td>Kafka</td>
@@ -49,7 +49,7 @@ The benchmark suite has five applications, each with two functions. You could fo
     <td>Kafka</td>
   </tr>
   <tr>
-    <td rowspan="2">Computer Vision</td>
+    <td rowspan="2"><a href="computer-vision">Computer Vision</a></td>
     <td>Detect Object</td>
     <td>Python</td>
     <td>TensorFlow</td>
@@ -71,7 +71,7 @@ The benchmark suite has five applications, each with two functions. You could fo
     <td>OSS</td>
   </tr>
   <tr>
-    <td rowspan="2">Smart Manufacturing</td>
+    <td rowspan="2"><a href="smart-manufacturing">Smart Manufacturing</a></td>
     <td>Ingest Data</td>
     <td>C++</td>
     <td>MySQL</td>

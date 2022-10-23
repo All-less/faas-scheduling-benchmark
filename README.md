@@ -93,13 +93,14 @@ The benchmark suite only supports Function Compute. To port it to other FaaS pla
 
 If you have used this benchmark in your research project, please cite the following paper.
 
-> @inproceedings{tian2022owl,
->   title={Owl: Performance-Aware Scheduling for Resource-Efficient Function-as-a-Service Cloud},
->   author={Tian, Huangshi and Li, Suyi and Wang, Ao and Wang, Wei and Wu, Tianlong and Yang, Haoran},
->   booktitle={Proceedings of the ACM Symposium on Cloud Computing 2022},
->   year={2022}
-> }
-
+```
+@inproceedings{tian2022owl,
+  title={Owl: Performance-Aware Scheduling for Resource-Efficient Function-as-a-Service Cloud},
+  author={Tian, Huangshi and Li, Suyi and Wang, Ao and Wang, Wei and Wu, Tianlong and Yang, Haoran},
+  booktitle={Proceedings of the ACM Symposium on Cloud Computing 2022},
+  year={2022}
+}
+```
 
 ### Acknowledgement
 

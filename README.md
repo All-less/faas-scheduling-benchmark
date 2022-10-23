@@ -14,7 +14,7 @@ If you want to deploy and run the functions, you need to ...
 
 ### Repo Structure
 
-Five applications, each with two functions. You could follow the README.md in each application directory.
+The benchmark suite has five applications, each with two functions. You could follow the README in each application directory to deploy and invoke the function.
 
 <table>
 <thead>
@@ -64,7 +64,7 @@ Five applications, each with two functions. You could follow the README.md in ea
     <td>TensorFlow</td>
   </tr>
   <tr>
-    <td rowspan="2">Media Processing</td>
+    <td rowspan="2"><a href="faas-scheduling-benchmark/tree/master/media-processing">Media Processing</a></td>
     <td>Get Media Meta</td>
     <td>Python</td>
     <td>OSS</td>

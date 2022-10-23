@@ -23,7 +23,6 @@ The benchmark suite has five applications, each with two functions. You could fo
     <th>Function</th>
     <th>Programming Language</th>
     <th>Dependencies</th>
-    <th>Link</th>
   </tr>
 </thead>
 <tbody>
@@ -32,7 +31,6 @@ The benchmark suite has five applications, each with two functions. You could fo
     <td>Query Vacancy</td>
     <td>JavaScript</td>
     <td>Redis</td>
-    <td rowspan="2"></td>
   </tr>
   <tr>
     <td>Reserve Spot</td>
@@ -44,7 +42,6 @@ The benchmark suite has five applications, each with two functions. You could fo
     <td>Anonymize Log</td>
     <td>Rust</td>
     <td>Kafka</td>
-    <td rowspan="2"></td>
   </tr>
   <tr>
     <td>Filter Log</td>
@@ -56,7 +53,6 @@ The benchmark suite has five applications, each with two functions. You could fo
     <td>Detect Object</td>
     <td>Python</td>
     <td>TensorFlow</td>
-    <td rowspan="2"></td>
   </tr>
   <tr>
     <td>Classify Image</td>
@@ -64,11 +60,10 @@ The benchmark suite has five applications, each with two functions. You could fo
     <td>TensorFlow</td>
   </tr>
   <tr>
-    <td rowspan="2"><a href="faas-scheduling-benchmark/tree/master/media-processing">Media Processing</a></td>
+    <td rowspan="2"><a href="media-processing">Media Processing</a></td>
     <td>Get Media Meta</td>
     <td>Python</td>
     <td>OSS</td>
-    <td rowspan="2"></td>
   </tr>
   <tr>
     <td>Convert Audio</td>
@@ -80,7 +75,6 @@ The benchmark suite has five applications, each with two functions. You could fo
     <td>Ingest Data</td>
     <td>C++</td>
     <td>MySQL</td>
-    <td rowspan="2"></td>
   </tr>
   <tr>
     <td>Detect Anomaly</td>

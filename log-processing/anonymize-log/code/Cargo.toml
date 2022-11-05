@@ -1,0 +1,9 @@
+[package]
+name = "handler"
+version = "0.1.0"
+authors = ["Mark Sta Ana <booyaabooyaabooyaa@gmail.com>"]
+
+[dependencies]
+kafka = "0.8"
+custom_error = "1.6.0"
+regex = "1"

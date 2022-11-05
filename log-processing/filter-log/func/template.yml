@@ -1,0 +1,29 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  log-processing:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'Anonymize the logs read from Kafka.'
+      Policies:
+        - AliyunLogFullAccess
+      InternetAccess: true
+
+    filter-log:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: handler.handle
+        Runtime: custom
+        MemorySize: 1024
+        Timeout: 60
+        CodeUri: './package'
+        EnvironmentVariables:
+          'KAFKA_BROKER': '<kafka-broker-address>'
+          'KAFKA_READ_TOPIC': 'original-logs'
+          'KAFKA_WRITE_TOPIC': 'filtered-logs'
+      Events:
+        http-trigger:
+          Type: HTTP
+          Properties:
+              AuthType: ANONYMOUS
+              Methods: ['GET', 'POST', 'PUT']

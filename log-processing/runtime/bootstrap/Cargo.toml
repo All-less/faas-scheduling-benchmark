@@ -1,0 +1,19 @@
+[package]
+name = "bootstrap"
+version = "0.1.0"
+edition = "2018"
+
+
+[dependencies]
+tokio = { version = "0.2", features = ["full"] }
+warp = "0.2"
+bytes = "0.5"
+handler = { path = "../function" }
+
+[source]
+
+[source.crates-io]
+replace-with = 'ustc'
+
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"

@@ -5,10 +5,10 @@ This application manages smart parking sites and provides a mobile app to users.
 - The [Query Vacancy](#query-vacancy-function) function queries the vacancy of a specific spot.
 - The [Reserve Spot](#reserve-spot-function) function reserves a specific parking spot.
 
-### Prerequisite
+### Prerequisites
 
 Both functions require a running [Redis](https://redis.io/) and the Reserve Spot function further needs [Kafka](https://kafka.apache.org/).
-- After deploying Redis, edit the `REDIS_URL` entry in both `{query-vacancy,reserve-spot}/code/template.yml`.
+- After deploying Redis, edit the `REDIS_URL` entry in both `{query-vacancy,reserve-spot}/code/template.yml`. Then create a key-value pair `vacancy:10` in Redis.
 - After deploying Kafka, create a topic with the name of your choice. Then edit the `KAFKA_BROKER` and `KAFKA_TOPIC` entries in `reserve-spot/code/template.yml`.
 
 ### Query Vacancy Function

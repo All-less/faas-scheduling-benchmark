@@ -86,7 +86,7 @@ The benchmark suite has five applications, each with two functions. You could fo
 
 ### Portability
 
-The benchmark suite only supports Function Compute. To port it to other FaaS platforms, you have to change the way how arguments are passed into the function and how they are deployed.
+The benchmark suite only supports [Function Compute](https://www.alibabacloud.com/product/function-compute). To port it to other FaaS platforms, you have to change the way how arguments are passed into the function and how the functions are deployed.
 
 
 ### Citation

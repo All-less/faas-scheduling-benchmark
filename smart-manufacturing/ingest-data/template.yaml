@@ -1,0 +1,34 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  smart-manufacturing:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Policies:
+        - AliyunContainerRegistryReadOnlyAccess
+        - AliyunLogFullAccess
+      InternetAccess: true
+
+    ingest-data:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Runtime: custom-container
+        Timeout: 60
+        CAPort: 8080
+        Handler: not-used
+        MemorySize: 1024
+        CodeUri: ./        # Root directory for the function or the Dockerfile path
+        CustomContainerConfig:
+          Image: '<image-registry>/<image-name>:<image-tag>'
+          Command: ''
+          Args: ''
+        EnvironmentVariables:
+          'MYSQL_ADDRESS': 'tcp://<mysql-address>:<mysql-port>'
+          'MYSQL_USERNAME': '<mysql-username>'
+          'MYSQL_PASSWORD': '<mysql-password>'
+      Events:
+        http-trigger:
+          Type: HTTP
+          Properties:
+              AuthType: ANONYMOUS
+              Methods: ['GET', 'POST', 'PUT']

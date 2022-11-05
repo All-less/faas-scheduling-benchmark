@@ -1,0 +1,30 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  computer-vision:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Policies:
+        - AliyunContainerRegistryReadOnlyAccess
+        - AliyunLogFullAccess
+      InternetAccess: true
+
+    classify-image:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Runtime: custom-container
+        Timeout: 180
+        CAPort: 8080
+        Handler: not-used
+        MemorySize: 3072
+        CodeUri: ./
+        CustomContainerConfig:
+          Image: 'docker.io/allless/classify-image:v0.1'
+          Command: '[ "gunicorn" ]'
+          Args: '[ "-w", "1", "--threads", "10", "-b", "0.0.0.0:8080", "--keep-alive", "900", "server:app" ]'
+      Events:
+        http-trigger:
+          Type: HTTP
+          Properties:
+              AuthType: ANONYMOUS
+              Methods: ['GET', 'POST', 'PUT']
